@@ -1,0 +1,46 @@
+<app-header title="Busqueda de imagenes"></app-header>
+
+<ion-content [fullscreen]="true" class="myview" padding>
+
+    <ion-toolbar class=" m-2">
+        <!--        formulario de busqueda-->
+        <ion-searchbar showCancelButton="focus" placeholder="Filter Schedules"
+                       (ionChange)="buscarTexto($event)"></ion-searchbar>
+    </ion-toolbar>
+
+    <ion-row *ngIf="values.length!=0; else vacio">
+        <ion-col size-xs='12' size-sm='6' size-md='4' size-lg='3' *ngFor='let value of values'>
+            <app-card
+                    [img]="value.thumbnail"
+                    [title]="value.title"
+                    [url]="value.webpageUrl"
+
+            ></app-card>
+
+            <!--            <ion-card>-->
+            <!--                <ion-card-header>-->
+            <!--                </ion-card-header>-->
+            <!--                <ion-img [src]="value.thumbnail"></ion-img>-->
+            <!--                <ion-card-content>-->
+            <!--                    <ion-card-title>{{value.title}}</ion-card-title>-->
+            <!--                    <p>{{value.name}}</p>-->
+            <!--                    <a [href]="value.webpageUrl" target="_blank"> ver en la web </a>-->
+            <!--                </ion-card-content>-->
+            <!--            </ion-card>-->
+        </ion-col>
+
+    </ion-row>
+    <ng-template #vacio>
+        <ion-row>
+            <br>
+            <br>
+            <br>
+            <br>
+            <ion-col>
+                <p>no se encuentan datos en su busqueda</p>
+            </ion-col>
+
+        </ion-row>
+
+    </ng-template>
+</ion-content>

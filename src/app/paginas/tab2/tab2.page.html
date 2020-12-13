@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Corrector Ortografico
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="myview" padding>
+
+
+    <ion-toolbar class=" m-2">
+        <!--        formulario de busqueda-->
+        <ion-searchbar showCancelButton="focus" placeholder="Filter Schedules"
+                       (ionChange)="corrector($event)"></ion-searchbar>
+    </ion-toolbar>
+    <ion-card>
+        <ion-card-content>
+            <ion-card-title>{{textSuccess}}</ion-card-title>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,17 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Auto Complete
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="myview" padding>
+  <ion-toolbar class=" m-2">
+    <!--        formulario de busqueda-->
+    <!--  <ion-searchbar showCancelButton="focus" placeholder="Filter Schedules"
+                     (ionChange)="Comlete($event)"></ion-searchbar>-->
+<!--    <ion-input></ion-input>-->
+<!--    <label for="browser">Choose your browser from the list:</label>-->
+<!--    <br>-->
+    <input type="text" class="input" list="browsers" name="browser" (keyup)='keyUp.next($event)'  id="busqueda" placeholder="Busca autocomplete">
+    <datalist id="browsers">
+      <option *ngFor="let letra of values" value="{{letra}}">
+<!---->
+    </datalist>
+  </ion-toolbar>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+<!--    <ion-card-content>-->
+<!--      <ion-card-title>{{textSuccess}}</ion-card-title>-->
+<!--    </ion-card-content>-->
+  </ion-card>
 </ion-content>

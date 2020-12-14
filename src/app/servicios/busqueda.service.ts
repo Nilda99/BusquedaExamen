@@ -40,4 +40,15 @@ export class BusquedaService {
             }
         );
     }
+
+    autoComlete(texto?: string): Observable<any> {
+        return this.httpClient.get<any>(this.baseUrl + `/spelling/AutoComplete?text=${texto}`,
+            {
+                headers: {
+                    'x-rapidapi-key': environment.apikey,
+                    'x-rapidapi-host': environment.host
+                }
+            }
+        );
+    }
 }

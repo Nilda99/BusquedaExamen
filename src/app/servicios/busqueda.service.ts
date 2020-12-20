@@ -19,8 +19,8 @@ export class BusquedaService {
 
     }
 
-    buscar(texto?: string): Observable<Respuesta> {
-        return this.httpClient.get<Respuesta>(this.baseUrl + `/Search/ImageSearchAPI?pageNumber=1&pageSize=10&q=${texto}&autoCorrect=true`,
+    buscar(totalPagina: number, texto?: string): Observable<Respuesta> {
+        return this.httpClient.get<Respuesta>(this.baseUrl + `/Search/ImageSearchAPI?pageNumber=1&pageSize=${totalPagina}&q=${texto}&autoCorrect=true`,
             {
                 headers: {
                     'x-rapidapi-key': environment.apikey,

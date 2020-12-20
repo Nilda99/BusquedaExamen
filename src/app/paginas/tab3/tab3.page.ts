@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {Value} from '../../modelos/busqueda';
 import {BusquedaService} from '../../servicios/busqueda.service';
-import {Subject} from "rxjs";
-import {debounceTime, distinctUntilChanged, map} from "rxjs/operators";
+import {Subject} from 'rxjs';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-tab3',
@@ -14,7 +14,7 @@ export class Tab3Page {
   textSuccess: string;
   name: string;
 
-  public keyUp = new Subject<string>();
+  public keyUp = new Subject<string>(); // creando un observable de tipo subject
 
   constructor(public  busquedaServicio: BusquedaService) {
 

@@ -11,9 +11,9 @@ export class CardComponent implements OnInit {
     @Input() url: string;
 
     constructor() {
-      console.log(this.img);
-      console.log(this.title);
-      console.log(this.url);
+      // console.log(this.img);
+      // console.log(this.title);
+      // console.log(this.url);
     }
 
     ngOnInit() {
